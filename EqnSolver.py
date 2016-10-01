@@ -58,20 +58,21 @@ def calculation(coeffcients,powernum,x):
         calcount += 1
     return psol
 
-
-EqnIn = input('Enter the LHS of the equation: ')
-EqnRHS = int(input("Enter the RHS of the equation: "))
-powernum = powerpull(EqnIn)
-coeffcients = coepull(EqnIn)
-solutions = []
-x = -10000
-while x<10000:
-    sol = calculation(coeffcients,powernum,x)
-    fsol = accuracy(sol,EqnRHS)
-    if fsol == EqnRHS:
-        print(round(x,2),'is a solution')
-        solutions.append(x)
-        x += 0.005
-    else:
-        x += 0.005
-print(solutions)
+while True:
+    EqnIn = input('Enter the LHS of the equation: ')
+    EqnRHS = int(input("Enter the RHS of the equation:  "))
+    powernum = powerpull(EqnIn)
+    coeffcients = coepull(EqnIn)
+    solutions = []
+    print('Calculating Solutions...')
+    x = -10000
+    while x<10000:
+        sol = calculation(coeffcients,powernum,x)
+        fsol = accuracy(sol,EqnRHS)
+        if fsol == EqnRHS:
+            print(round(x,2),'is a solution')
+            solutions.append(x)
+            x += 0.005
+        else:
+            x += 0.005
+    input("Press any key to restart ")
