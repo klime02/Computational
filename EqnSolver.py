@@ -57,7 +57,8 @@ def calculation(coeffcients,powernum,x):
         psol = psol +coeffcients[calcount] * pow(x, powernum[calcount])
         calcount += 1
     return psol
-
+# To make this work, use a space before the first charecter of the equation, and a space after the last charecter
+# Also the equation should be written out in full, eg x^2 + 2x + 3 should be written as (space)1x^2 + 2x^1 + 3x^0(space)
 while True:
     EqnIn = input('Enter the LHS of the equation: ')
     EqnRHS = int(input("Enter the RHS of the equation:  "))
